@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'FiraCode';
+    src: url('./font/FiraCode-VF.ttf');
+}
+
+@font-face {
+    font-family: 'XingXing';
+    src: url('./font/XingXingDeYeMiRenDeYan-2.ttf');
+}
+
+body {
+    font-family: 'FiraCode', 'XingXing';
+}

@@ -1,0 +1,14 @@
+diff a/tools/setup.py b/tools/setup.py	(rejected hunks)
+@@ -1,7 +1,7 @@
+ configs = {
+     "email": {
+-        "sender": "xxx",
+-        "mail_host": "xxx",
+-        "mail_pass": "xxx",
++        "sender": "blsbot@foxmail.com",
++        "mail_host": "smtp.qq.com",
++        "mail_pass": "rsjcoqgaswyychef",
+     }
+-}
++}
+\ No newline at end of file
