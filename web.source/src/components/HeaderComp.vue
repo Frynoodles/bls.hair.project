@@ -3,6 +3,23 @@ import LogoIcon from './icons/LogoIcon.vue';
 import BilibiliIcon from './icons/BilibiliIcon.vue';
 import GithubIcon from './icons/GithubIcon.vue';
 import SteamIcon from './icons/SteamIcon.vue';
+import router from '@/router';
+import { ref } from 'vue';
+
+// TODO 为点击头像增加更多动画效果或提示
+let click_count: number = 0;
+let color_level = ['#00FF00', '#33FF00', '#66FF00', '#99FF00', '#CCFF00',
+    '#FFFF00', '#FFCC00', '#FF9900', '#FF6600', '#FF3300']
+let border_color = ref(color_level[click_count])
+const login = function (): void {
+    if (click_count < 9) {
+        click_count++;
+        border_color.value = color_level[click_count]
+    } else {
+        router.replace({ path: '/login' });
+        click_count = 0;
+    }
+}
 
 </script>
 <template>
@@ -53,6 +70,11 @@ import SteamIcon from './icons/SteamIcon.vue';
                         <SteamIcon />
                     </a>
                 </li>
+                <li class="media-icon">
+                    <div class="image-container" :onClick="login" :style="{ borderColor: border_color }">
+                        <img src="../assets/img/face-boqi.jpg">
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -100,6 +122,29 @@ import SteamIcon from './icons/SteamIcon.vue';
 
     .media-icon {
         padding: 0 10px;
+
+        .image-container {
+            width: 40px;
+            /* 设置容器的宽度 */
+            height: 40px;
+            /* 设置容器的高度 */
+            border-radius: 50%;
+            /* 将容器的圆角半径设置为50% */
+            overflow: hidden;
+            border: 1px solid;
+
+            /* 隐藏超出容器部分的内容 */
+            img {
+                display: block;
+                border-radius: 50%;
+                width: 100%;
+                /* 设置图片的宽度为容器的宽度 */
+                height: 100%;
+                /* 设置图片的高度为容器的高度 */
+                object-fit: cover;
+                /* 将图片按比例缩放，铺满整个容器 */
+            }
+        }
 
         svg {
             height: 30px;

@@ -6,6 +6,7 @@ import ToolBoxViewVue from '@/views/ToolBoxView.vue'
 import NavigatorViewVue from '@/views/NavigatorView.vue'
 import StorageViewVue from '@/views/StorageView.vue'
 import AboutViewVue from '@/views/AboutView.vue'
+import LoginViewVue from '@/views/LoginView.vue'
 import UnFoundViewVue from '@/views/UnFoundView.vue'
 
 const router = createRouter({
@@ -15,23 +16,28 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeViewVue
-    }, {
+    },
+    {
       path: '/notes',
       name: 'notes',
       component: NoteViewVue
-    }, {
+    },
+    {
       path: '/favorites',
       name: 'favorites',
       component: FavoritesViewVue
-    }, {
+    },
+    {
       path: '/toolbox',
       name: 'toolbox',
       component: ToolBoxViewVue
-    }, {
+    },
+    {
       path: '/nav',
       name: 'navigator',
       component: NavigatorViewVue
-    }, {
+    },
+    {
       path: '/storage',
       name: 'storage',
       component: StorageViewVue
@@ -40,7 +46,13 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutViewVue
-    }, {
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginViewVue
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: UnFoundViewVue
