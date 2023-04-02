@@ -9,6 +9,8 @@ let background_img_index = 'background-' + '1'
 
 <style scoped lang="less">
 .background-wallpaper {
+    position: absolute;
+    top: 0%;
     margin: 0%;
     padding: 0%;
     height: 100%;
@@ -17,5 +19,4 @@ let background_img_index = 'background-' + '1'
     background-image: url('../assets/img/background-img/background-1.jpg');
     background-size: auto 100%;
 }
-
 </style>
