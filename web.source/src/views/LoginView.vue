@@ -24,8 +24,7 @@ const submitFun = (): void => {
     if (checkStr(username.value) && checkStr(pwd.value)) {
         // 通过验证
         fetch('https://api.bls.hair/login', {
-            method: 'POST',
-            mode: 'cors', cache: 'no-cache', headers: { 'Content-Type': 'application/json' },
+            method: 'POST', cache: 'no-cache', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 'username': username.value, 'password': Md5.hashStr(pwd.value).toUpperCase() })
         })
             .then(resp => resp.json())
@@ -34,6 +33,7 @@ const submitFun = (): void => {
                     // 登陆成功
                     // TODO 提醒我要做个检测是否有cookie的功能了
                     // TODO 成功的提示和网页跳转
+                    // TODO 还没验证这样有没有问题
                     const now = new Date();
                     const expires = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
                     const expiresUTC = expires.toUTCString;
@@ -50,8 +50,6 @@ const submitFun = (): void => {
 
 // TODO 制作一下登录界面
 <template>
-    {{ username }}
-    {{ pwd }}
     <div class="login-container"
         :style="{ height: container_height, width: container_width, left: left_offset, top: top_offset }">
         <div class="container-title">登 录</div>
