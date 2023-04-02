@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import HeaderComp from './components/HeaderComp.vue';
+import BackgroundComp from './components/BackgroundComp.vue';
 </script>
 
 <template>
-  <HeaderComp />
-  <RouterView />
+  <div class="top-container">
+    <HeaderComp />
+    <RouterView />
+    <BackgroundComp />
+  </div>
 </template>
 
 <style scoped lang="less">
-body {
-  background-color: black;
+
+.top-container {
+  width: 100%;
+  height: 100%;
 }
 </style>
